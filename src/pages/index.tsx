@@ -1,9 +1,9 @@
 import Head from 'next/head'
-import styles from "@/styles/Home.module.scss";
-import Image from "next/image";
+import styles from "@/styles/index.module.scss";
 import Button from "@/components/Button/Button";
-import check from '@/assets/check.svg'
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
+import Filter from "@/components/Filter/Filter";
+import Card from "@/components/Card/Card";
 
 
 const Home = () => {
@@ -14,8 +14,7 @@ const Home = () => {
         console.log(screenWidth, screenHeight)
     });
 
-    const array = ['hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello'];
-    const [isCheck, setIsCheck] = useState(false);
+
     return (
         <>
             <Head>
@@ -31,53 +30,8 @@ const Home = () => {
                 />
         </Head>
             <div className={styles.main}>
-                <div className={styles.filter}>
-                    <div>Tоваров 143</div>
-                    <div>Камеры</div>
-                    <div>Цена, ₽</div>
-                    <input className={styles.minValue} type="number" min="-50"/>
-                    <input className={styles.maxValue} type="number" min="-50"/>
-                    <div>Бренд</div>
-                    {!isCheck ?
-                        <div className={styles.checkBox}>
-                            <div className={styles.checkBoxOff} onClick={() => setIsCheck(true)}> </div>
-                            <span>Canon</span>
-                        </div>
-
-                        :
-                        <div className={styles.checkBox}>
-                            <div className={styles.checkBoxOn} onClick={() => setIsCheck(false)}>
-                                <Image src={check} alt={''}/>
-                            </div>
-                            <span>Canon</span>
-                        </div>}
-                    {!isCheck ?
-                        <div className={styles.checkBox}>
-                            <div className={styles.checkBoxOff} onClick={() => setIsCheck(true)}> </div>
-                            <span>Nicon</span>
-                        </div>
-
-                        :
-                        <div className={styles.checkBox}>
-                            <div className={styles.checkBoxOn} onClick={() => setIsCheck(false)}>
-                                <Image src={check} alt={''}/>
-                            </div>
-                            <span>Nicon</span>
-                        </div>}
-
-                </div>
-                <div className={styles.content}>
-                    {array.map(el => <div className={styles.card}>
-                        <img className={styles.image} src="" alt=""/>
-                        {el}
-                        <div>Название</div>
-                        <div style={{display: "flex"}}>
-                            <div>28 000 ₽</div>
-                            <div> Новое</div>
-                        </div>
-                        <Button title={'В корзину'}/>
-                    </div>)}
-                </div>
+                <Filter/>
+                <Card/>
             </div>
         </>
 )

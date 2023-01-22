@@ -1,0 +1,45 @@
+@import '../../styles/mixins.scss';
+.content{
+  width:100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 24px;
+  -background-color: pink;
+  padding-left: 266px;
+  padding-top: 64px;
+  padding-bottom: 64px;
+  .card{
+    width:242px;
+    height: 401px;
+    background: #FFFFFF;
+    border: 1px solid #E6E6E6;
+    border-radius: 4px;
+    .image{
+      width: 241px;
+      height: 242px;
+      border-radius: 4px 4px 0px 0px;
+      border: none;
+    }
+    .description{
+      height: 164px;
+      width: 242px;
+      padding: 12px 20px 31px 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .title{
+        @include Headline4D;
+      }
+      .priceNew{
+        display: flex;
+        justify-content: space-between;
+        .price{
+          @include Headline3D;
+        }
+
+      }
+    }
+
+  }
+}
