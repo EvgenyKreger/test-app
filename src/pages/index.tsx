@@ -1,10 +1,9 @@
 import Head from 'next/head'
 import styles from "@/styles/index.module.scss";
-import Button from "@/components/Button/Button";
 import React, {useEffect} from "react";
 import Filter from "@/components/Filter/Filter";
 import Card from "@/components/Card/Card";
-
+import photo from '../assets/no-photo.png'
 
 const Home = () => {
 

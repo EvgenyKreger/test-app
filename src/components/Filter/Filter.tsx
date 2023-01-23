@@ -17,7 +17,6 @@ const Filter = () => {
             <InputFields/>
             <Brand/>
             <ChooseBrand/>
-
         </div>
     );
 };
