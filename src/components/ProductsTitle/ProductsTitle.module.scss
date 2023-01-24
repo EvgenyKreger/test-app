@@ -1,6 +1,14 @@
 @import '../../styles/mixins.scss';
 
-.main{
-    @include Headline1D;
-    margin-top: 5px;
+.main {
+  margin-top: 5px;
+  @include Headline1D;
+}
+
+@include sm {
+  .main {
+    margin-top: 0;
+    margin-bottom: 24px;
+    @include Headline2D;
+  }
 }

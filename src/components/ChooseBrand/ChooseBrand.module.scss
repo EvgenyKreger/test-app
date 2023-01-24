@@ -4,9 +4,9 @@
   display: flex;
 
   .checkBoxOff {
-    @include CheckBoxStyle;
-    border: 1px solid var(--Light_A_Gray);
     border-radius: 4px;
+    @include CheckBoxStyle;
+    @include Border_2;
   }
 
   .checkBoxOn {

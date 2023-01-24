@@ -1,3 +1,1 @@
-
-
-export const brandOfCameras = ['Canon', 'Nicon']
+export const brandOfCameras = ['Canon', 'Nikon']

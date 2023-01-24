@@ -1,33 +1,23 @@
-import React, {useEffect, useState} from 'react';
+import React, {FC} from 'react';
 import styles from "./Card.module.scss";
-import notPhoto from '../../assets/no-photo.png'
-import Image from "next/image";
 import Information from "@/components/Information/Information";
+import Photo from "@/components/Photo/Photo";
 
-const Card = () => {
-    const [data, setData] = useState<any>([])
+interface CardType {
+    data: any[]
+}
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const response = await fetch("https://getlens-master.s.dev.family/api/pages/obektivy");
-            const data = await response.json();
-            const needData = data.products.pop()
-            setData(data.products)
-        }
-        fetchData();
-    }, [])
+const Card: FC<CardType> = ({data}) => {
+    const needItem = data.length - 1
     return (
-            <div className={styles.content}>
-                {data && data.map((el: any) =>
-                    <div key={el.id} className={styles.card}>
-                        <div>
-                            {el.image?.desktop.x1 ? <img className={styles.image} src={el.image?.desktop.x1} alt=""/> :
-                                <Image className={styles.image} src={notPhoto} alt=""/>
-                            }
-                        </div>
-                        <Information title={el.title} price={el.price}/>
-                    </div>)}
-            </div>
+        <div className={styles.content}>
+            {data && data.map((el: any, index) =>
+                <div key={el.id} className={styles.card}>
+                    <Photo image={el.image?.desktop.x1}/>
+                    <Information title={el.title} price={el.price.split('.')[0]} isNew={el.is_new} id={el.id}/>
+                    {index !== needItem && <div className={styles.line}></div>}
+                </div>)}
+        </div>
     );
 };
 

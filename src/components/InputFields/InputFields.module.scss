@@ -3,13 +3,13 @@
 .main {
   width: 224px;
   height: 42px;
-  @include Border_2;
   border-radius: 4px;
+  @include Border_2;
 
   .minValue {
+    border-radius: 4px 0 0 4px;
     @include InputBoxStyle;
     @include Headline4D;
-    border-radius: 4px 0 0 4px;
   }
 
   .minValue:focus {
@@ -17,10 +17,10 @@
   }
 
   .maxValue {
+    border-radius: 0 4px 4px 0;
     @include InputBoxStyle;
     @include Border_2_L;
     @include Headline4D;
-    border-radius: 0 4px 4px 0;
   }
 
   .maxValue:focus {

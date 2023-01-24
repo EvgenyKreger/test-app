@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import styles from './Button.module.css'
+import styles from './Button.module.scss'
 interface ButtonType{
     title: string
 }

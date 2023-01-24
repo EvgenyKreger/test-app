@@ -1,6 +1,11 @@
 
-  @mixin FlexCenter {
+  @mixin FlexSpaceBetween {
     display: flex;
+    justify-content: space-between;
+  }
+  @mixin FlexStart {
+    display: flex;
+    justify-content: flex-start;
   }
   @mixin Headline1D {
     font-family: var(--default-font);
@@ -77,3 +82,14 @@
   @mixin Border_2_L {
     border-left: 1px solid var(--Light_Gray);
   }
+
+
+
+  $sm: 513px;
+
+  @mixin sm {
+    @media (max-width: $sm) {
+      @content;
+    }
+  }
+

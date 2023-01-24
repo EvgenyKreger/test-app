@@ -1,0 +1,16 @@
+@import '../../styles/mixins.scss';
+
+.btn {
+  width: 106px;
+  height: 40px;
+  text-align: center;
+  padding-top: 8px;
+  border-radius: 8px;
+  @include Headline4D;
+  @include Border_2;
+
+}
+
+.btn:hover {
+  border: 2px solid var(--Grey);
+}

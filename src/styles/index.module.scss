@@ -3,9 +3,6 @@
   max-width: 1306px;
   height: 100%;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  -position: relative;
   /* Chrome, Safari, Edge, Opera */
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
@@ -16,5 +13,11 @@
   /* Firefox */
   input[type=number] {
     -moz-appearance:textfield;
+  }
+}
+
+@include sm{
+  .main{
+padding: 47px 20px ;
   }
 }

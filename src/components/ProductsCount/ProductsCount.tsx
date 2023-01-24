@@ -1,10 +1,11 @@
 import React, {FC} from 'react';
 import styles from './ProductsCount.module.scss'
 
-interface ProductsType{
+interface ProductsType {
     count: number
 }
-const ProductsCount:FC<ProductsType> = ({count}) => {
+
+const ProductsCount: FC<ProductsType> = ({count}) => {
     return (
         <div className={styles.main}>
             {`Товаров ${count}`}

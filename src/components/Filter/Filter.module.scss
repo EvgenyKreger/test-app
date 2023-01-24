@@ -1,7 +1,21 @@
-.filter{
-  min-width:242px;
+@import '../../styles/mixins.scss';
+
+.filter {
+  min-width: 242px;
   padding: 64px 14px 0 4px;
   position: fixed;
   height: 100%;
 
+}
+
+@include sm {
+  .filter {
+    position: relative;
+    padding: 0;
+
+    .forMobile {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
 }
