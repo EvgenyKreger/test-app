@@ -1,0 +1,6 @@
+@import '../../styles/mixins.scss';
+.main{
+  text-align: center;
+ @include Headline4D;
+  color: var(--Blue);
+}

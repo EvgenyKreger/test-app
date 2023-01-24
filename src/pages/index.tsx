@@ -3,20 +3,51 @@ import styles from "@/styles/index.module.scss";
 import React, {useEffect, useState} from "react";
 import Filter from "@/components/Filter/Filter";
 import Card from "@/components/Card/Card";
+import Image from "next/image";
+import Louder from "@/assets/louder.gif";
+import {DataType} from "@/models/models";
 
 const Home = () => {
 
-    const [data, setData] = useState<any>([])
+    const [data, setData] = useState<DataType[]>([])
+    const [isLouder, setIsLouder] = useState(false)
+
+    async function getDataFilter(checkName: string, maxValue: string, minValue: string) {
+        let brand = '';
+        if (checkName === 'Canon') {
+            brand = 'brands[]=2&'
+        }
+        if (checkName === 'Nikon') {
+            brand = 'brands[]=9&'
+        }
+        setIsLouder(true)
+        const response = await fetch(
+            `https://getlens-master.s.dev.family/api/pages/obektivy?${brand}price[min]=${minValue}&price[max]=${maxValue}`
+        );
+        const data = await response.json();
+        setData(data.products);
+        setIsLouder(false)
+    }
 
     useEffect(() => {
-        const fetchData = async () => {
-            const response = await fetch("https://getlens-master.s.dev.family/api/pages/obektivy");
-            const data = await response.json();
-            const needData = data.products.pop();
-            setData(data.products);
+        if (!data.length) {
+            setIsLouder(true)
+            const fetchData = async () => {
+                const response = await fetch(`https://getlens-master.s.dev.family/api/pages/obektivy`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': ''
+                    }
+                });
+                const data = await response.json();
+                setData(data.products);
+                setIsLouder(false)
 
+            }
+            fetchData();
         }
-        fetchData();
+
     }, [])
 
 
@@ -35,10 +66,16 @@ const Home = () => {
                     rel="stylesheet"
                 />
             </Head>
-            <div className={styles.main}>
-                <Filter count={data.length}/>
-                <Card data={data}/>
-            </div>
+            {isLouder ?
+                <Image className={styles.louder} src={Louder} alt=""/> :
+                <div className={styles.main}>
+                    <Filter count={data.length} getDataFilter={getDataFilter}/>
+                    <Card data={data}/>
+                </div>
+
+            }
+
+
         </>
     )
 }

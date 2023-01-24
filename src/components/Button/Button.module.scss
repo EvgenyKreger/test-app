@@ -1,7 +1,7 @@
 @import '../../styles/mixins.scss';
 
 .btn {
-  width: 106px;
+  min-width: 106px;
   height: 40px;
   text-align: center;
   padding-top: 8px;
@@ -12,5 +12,5 @@
 }
 
 .btn:hover {
-  border: 2px solid var(--Grey);
+  border: 1px solid var(--Grey);
 }

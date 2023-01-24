@@ -1,18 +1,17 @@
-import React, {useState} from 'react';
+import React, {FC, useState} from 'react';
 import styles from './ChooseBrand.module.scss';
 import Image from "next/image";
 import check from "@/assets/check.svg";
 import {brandOfCameras} from "@/constants/brandOfCameras";
 
-const ChooseBrand = () => {
-    const [checkName, setCheckName] = useState('');
-    const checkBrandHandler = (name: string) => {
-        if (name === checkName) {
-            setCheckName('')
-        } else {
-            setCheckName(name)
-        }
-    }
+interface ChooseBrandType {
+    checkBrandHandler: (name: string) => void
+    checkName: string
+
+}
+
+const ChooseBrand:FC<ChooseBrandType> = ({checkBrandHandler,checkName}) => {
+
     return (
         <>
             {brandOfCameras.map((el, index) =>

@@ -1,5 +1,16 @@
 @import './mixins.scss';
-.main{
+
+.louder {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -50px;
+  margin-top: -50px;
+}
+
+.main {
   max-width: 1306px;
   height: 100%;
   margin: 0 auto;
@@ -12,12 +23,12 @@
 
   /* Firefox */
   input[type=number] {
-    -moz-appearance:textfield;
+    -moz-appearance: textfield;
   }
 }
 
-@include sm{
-  .main{
-padding: 47px 20px ;
+@include sm {
+  .main {
+    padding: 47px 20px;
   }
 }

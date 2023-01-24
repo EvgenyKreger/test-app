@@ -8,17 +8,17 @@ import heartYes from "@/assets/favouritesYes.svg";
 
 interface InformationType {
     title: string
-    price: number
+    price: string
     isNew: boolean
-    id: string
+    id: number
 }
 
 const Information: FC<InformationType> = ({title, price, isNew, id}) => {
-    const [isHeart, setIsHeart] = useState<string[]>([])
-    const addIsHeart = (value: string) => {
+    const [isHeart, setIsHeart] = useState<number[]>([])
+    const addIsHeart = (value: number) => {
         setIsHeart((prev) => [...prev, value])
     }
-    const deleteIsHeart = (value: string) => {
+    const deleteIsHeart = (value: number) => {
         const filtered = isHeart.filter(el => el !== value)
         if (filtered) {
             setIsHeart(filtered)

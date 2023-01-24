@@ -5,7 +5,12 @@
   padding: 64px 14px 0 4px;
   position: fixed;
   height: 100%;
-
+  .chooseBtn{
+    margin-top: 20px;
+    height: 80px;
+    flex-direction: column;
+    @include FlexSpaceBetween;
+  }
 }
 
 @include sm {
