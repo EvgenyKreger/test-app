@@ -1,0 +1,45 @@
+@import '../../styles/mixins.scss';
+
+.description {
+  height: 159px;
+  width: 242px;
+  padding: 12px 16px 12px 16px;
+  flex-direction: column;
+  border-right: 1px solid var(--Light_B_Gray);
+  border-bottom: 1px solid var(--Light_B_Gray);
+  border-left: 1px solid var(--Light_B_Gray);
+  border-radius: 0 0 4px 4px;
+  @include FlexSpaceBetween;
+
+  .title {
+    @include Headline4D;
+    height: 40px;
+  }
+
+  .priceNew {
+    align-items: flex-end;
+    @include FlexSpaceBetween;
+
+    .price {
+      @include Headline3D;
+    }
+
+    .new {
+      @include Headline5D;
+    }
+  }
+
+  .basket {
+    @include FlexSpaceBetween;
+  }
+}
+
+@include sm {
+  .description {
+    height: 124px;
+    width: 100%;
+    border: none;
+    padding: 0 0 0 16px;
+    @include FlexSpaceBetween;
+  }
+}

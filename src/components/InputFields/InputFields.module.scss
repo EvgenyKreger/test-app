@@ -1,0 +1,34 @@
+@import '../../styles/mixins.scss';
+
+.main {
+  width: 224px;
+  height: 42px;
+  border-radius: 4px;
+  @include Border_2;
+
+  .minValue {
+    border-radius: 4px 0 0 4px;
+    @include InputBoxStyle;
+    @include Headline4D;
+  }
+
+  .minValue:focus {
+    outline: none;
+  }
+
+  .maxValue {
+    border-radius: 0 4px 4px 0;
+    @include InputBoxStyle;
+    @include Border_2_L;
+    @include Headline4D;
+  }
+
+  .maxValue:focus {
+    outline: none;
+  }
+
+}
+
+.main:hover {
+  @include Border_1;
+}

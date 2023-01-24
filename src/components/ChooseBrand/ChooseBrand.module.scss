@@ -1,0 +1,19 @@
+@import '../../styles/mixins.scss';
+
+.checkBox {
+  display: flex;
+
+  .checkBoxOff {
+    border-radius: 4px;
+    @include CheckBoxStyle;
+    @include Border_2;
+  }
+
+  .checkBoxOn {
+    @include CheckBoxStyle;
+  }
+
+  .text {
+    @include Headline4D;
+  }
+}

@@ -1,0 +1,7 @@
+@import '../../styles/mixins.scss';
+
+.main{
+  margin-top: 24px;
+  margin-bottom: 13px;
+  @include Headline3D;
+}

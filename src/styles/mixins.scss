@@ -1,0 +1,95 @@
+
+  @mixin FlexSpaceBetween {
+    display: flex;
+    justify-content: space-between;
+  }
+  @mixin FlexStart {
+    display: flex;
+    justify-content: flex-start;
+  }
+  @mixin Headline1D {
+    font-family: var(--default-font);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 140%;
+    color:var(--Black)
+  }
+  @mixin Headline2D {
+    font-family: var(--default-font);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 140%;
+    color:var(--Black)
+  }
+  @mixin Headline3D {
+    font-family: var(--default-font);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 140%;
+    color:var(--Black)
+  }
+  @mixin Headline4D {
+    font-family: var(--default-font);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 140%;
+    color:var(--Black)
+  }
+  @mixin Headline4D-Deep_Gray {
+    font-family: var(--default-font);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 140%;
+    color:var(--Deep_Gray)
+  }
+  @mixin Headline5D {
+    font-family: var(--default-font);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 140%;
+    color:var(--Black)
+  }
+
+  @mixin CheckBoxStyle {
+    width: 18px;
+    height: 18px;
+    margin-right: 9px;
+    margin-bottom: 10px;
+  }
+
+  @mixin InputBoxStyle {
+    width: 111px;
+    height: 40px;
+    border:none;
+    padding-left: 12px;
+  }
+
+
+
+
+  @mixin Border_1 {
+    border: 1px solid var(--Grey);
+  }
+  @mixin Border_2 {
+    border: 1px solid var(--Light_Gray);
+  }
+  @mixin Border_2_L {
+    border-left: 1px solid var(--Light_Gray);
+  }
+
+
+
+  $sm: 513px;
+
+  @mixin sm {
+    @media (max-width: $sm) {
+      @content;
+    }
+  }
+
