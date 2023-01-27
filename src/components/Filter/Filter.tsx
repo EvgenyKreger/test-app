@@ -27,13 +27,13 @@ const Filter: FC<FilterType> = ({count, getDataFilter}) => {
     }
     const checkMinValue = (value: any) => {
         const numbers = /^[0-9]+$/;
-        if (value.match(numbers) && value[0] !== '0' && value < 80001) {
+        if ((value.match(numbers) || value === '') && value[0] !== '0' && value < 80001) {
             setMinValue(value)
         }
     }
     const checkMaxValue = (value: any) => {
         const numbers = /^[0-9]+$/;
-        if (value.match(numbers) && value[0] !== '0' && value < 80001) {
+        if ((value.match(numbers) || value === '') && value[0] !== '0' && value < 80001) {
             setMaxValue(value)
         }
     }
@@ -57,8 +57,6 @@ const Filter: FC<FilterType> = ({count, getDataFilter}) => {
                 minValue={minValue}
                 minHolder={'0'}
                 maxHolder={'80000'}
-                setMaxValue={setMaxValue}
-                setMinValue={setMinValue}
             />
             <Brand/>
             <ChooseBrand checkBrandHandler={checkBrandHandler} checkName={checkName}/>

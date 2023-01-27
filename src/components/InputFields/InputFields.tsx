@@ -8,9 +8,6 @@ interface InputFieldsType {
     maxValue: string
     minHolder: string
     maxHolder: string
-    setMaxValue: (value: string) => void
-    setMinValue: (value: string) => void
-
 }
 
 const InputFields: FC<InputFieldsType> = ({
@@ -20,25 +17,18 @@ const InputFields: FC<InputFieldsType> = ({
                                               maxValue,
                                               minHolder,
                                               maxHolder,
-                                              setMaxValue,
-                                              setMinValue
                                           }) => {
-    const handler = (key: string) => {
-        if (key === 'Backspace' && minValue.length === 1) {
-            setMinValue('')
-        }
-        if (key === 'Backspace' && maxValue.length === 1) {
-            setMaxValue('')
-        }
-    }
+
     return (
         <div className={styles.main}>
             <input className={styles.minValue} onChange={(e) =>
-                checkMinValue(e.target.value)} onKeyUp={(e) => handler(e.key)} value={minValue}
+                checkMinValue(e.target.value)}
+                   value={minValue}
                    placeholder={minHolder}/>
 
             <input className={styles.maxValue} onChange={(e) =>
-                checkMaxValue(e.target.value)} onKeyUp={(e) => handler(e.key)} value={maxValue}
+                checkMaxValue(e.target.value)}
+                   value={maxValue}
                    placeholder={maxHolder}/>
         </div>
     );
